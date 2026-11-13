@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Passive Voice – Practice Test</title>
+<style>
+:root{--g:#2e7d32;--gd:#1b5e20;--gl:#4caf50;--bg:#f5f5f5;--tx:#1a1a1a;--ok:#2e7d32;--ko:#c62828;--okbg:#e8f5e9;--kobg:#ffebee}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5}
+header{background:var(--gd);color:#fff;padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:1.6rem}
+header p{margin:6px 0 0;font-size:.95rem;opacity:.92}
+.bar{position:sticky;top:0;z-index:10;background:var(--g);color:#fff;padding:8px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;box-shadow:0 2px 4px rgba(0,0,0,.2)}
+.bar b{font-size:1.05rem}
+main{max-width:900px;margin:0 auto;padding:16px}
+.intro{background:#fff;border-left:5px solid var(--g);padding:12px 16px;border-radius:4px;margin-bottom:16px;font-size:.95rem}
+.ex{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.12);padding:16px;margin-bottom:20px;border-top:4px solid var(--g)}
+.ex h2{margin:0 0 10px;font-size:1.1rem;color:var(--gd);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ex h2 span.pts{font-weight:normal;color:#555;font-size:.9rem}
+.box{border:2px solid var(--gd);border-radius:4px;padding:10px 12px;font-weight:bold;margin-bottom:12px;background:#f1f8f1}
+.it{margin:8px 0;padding:6px 8px;border-radius:5px}
+.it.ok{background:var(--okbg)}
+.it.ko{background:var(--kobg)}
+.num{display:inline-block;min-width:1.6em;font-weight:bold;color:var(--gd)}
+input[type=text]{font:inherit;border:0;border-bottom:2px solid #777;background:#fafafa;padding:2px 4px;margin:0 2px;outline:none;max-width:100%}
+input[type=text]:focus{border-bottom-color:var(--g);background:#fff}
+input.full{width:100%;display:block;margin-top:6px;padding:6px 8px;border:1px solid #bbb;border-bottom:2px solid #777;border-radius:3px}
+input:disabled{color:var(--tx);opacity:1}
+.opts label{margin-right:18px;cursor:pointer;white-space:nowrap}
+.pre{font-weight:bold;color:#555;margin-right:6px}
+.fb{display:block;font-size:.92rem;margin-top:4px}
+.fb.ok{color:var(--ok)} .fb.ko{color:var(--ko)}
+.sup{font-size:.75em;vertical-align:super;font-weight:bold;color:var(--gd)}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center;padding-top:12px;border-top:1px dashed #ccc}
+button{font:inherit;cursor:pointer;border:0;border-radius:5px;padding:9px 14px;font-weight:bold}
+.b1{background:var(--g);color:#fff}.b1:hover{background:var(--gd)}
+.b2{background:var(--gd);color:#fff}.b2:hover{background:#12420f}
+.b3{background:#e0e0e0;color:#222}.b3:hover{background:#cfcfcf}
+button:disabled{opacity:.45;cursor:not-allowed}
+.score{margin-left:auto;font-weight:bold;color:var(--gd)}
+.text{line-height:2.3}
+#top{position:fixed;right:16px;bottom:16px;background:var(--gd);color:#fff;border-radius:50%;width:46px;height:46px;padding:0;font-size:1.3rem;display:none;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+footer{text-align:center;padding:20px;color:#555;font-size:.9rem}
+@media(max-width:600px){.score{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<header>
+<h1>The Passive Voice – Practice Test</h1>
+<p>Esercitazione interattiva · funziona senza connessione a internet</p>
+</header>
+<div class="bar"><span>Punteggio (esercizi verificati): <b id="gscore">0 / 0</b> &nbsp;·&nbsp; Totale disponibile: <b id="gtot"></b></span><button class="b3" id="resetAll">Azzera tutto</button></div>
+<main>
+<div class="intro">Scrivi le risposte negli spazi. Per ogni esercizio puoi premere <b>"Verifica passo passo"</b> (a ogni clic controlla una risposta e mostra la soluzione) oppure <b>"Verifica tutto l'esercizio"</b>. Maiuscole, punto finale e forme contratte (isn't / is not) non contano.</div>
+<div id="root"></div>
+</main>
+<footer>Prof. Crespi · IIS G. Mendel</footer>
+<button id="top" title="Torna su" aria-label="Torna su">&#8593;</button>
+<script>
+/* Marker: [[risposta|variante]] — tra parentesi tonde nelle risposte = parte facoltativa */
+var EX=[
+{t:"Complete the sentences using the words in the box.",type:"cloze",lab:"a",
+ box:"HAVE BEEN SOLD • WAS WRITTEN • IS BEING BUILT • ARE SPOKEN • WILL BE ANNOUNCED • WASN'T INVITED • IS GOING TO BE OPENED • CAN BE FOUND • WERE DESTROYED • HAS BEEN CLEANED",
+ items:["This novel [[was written]] by Jane Austen in 1813.","Several languages [[are spoken]] in India.","A new shopping centre [[is being built]] near the station at the moment.","I'm sorry, all the tickets [[have been sold]].","The winner [[will be announced]] tomorrow evening.","Tom was upset because he [[wasn't invited]] to the party.","The new gym [[is going to be opened]] next month.","Free maps of the city [[can be found]] at the tourist office.","Many houses [[were destroyed]] by the flood last year.","The classroom [[has been cleaned]], so you can come in."]},
+{t:"Choose the right passive or active form of the verbs in brackets.",type:"cloze",
+ items:["This bridge [[was built]] (build) in 1850.","Somebody [[broke]] (break) the window last night.","Why [[was the match cancelled]] (the match/cancel) yesterday?","The students [[aren't allowed|are not allowed]] (not allow) to use mobile phones in class.","The thief [[was arrested]] (arrest) by the police an hour ago.","The company [[will employ]] (employ) fifty new workers next month.","English [[is spoken]] (speak) all over the world.","Two cars [[have been stolen]] (steal) in our street this week.","You [[must hand in]] (must/hand in) your homework on Monday.","When I arrived, the waiter [[was cleaning]] (clean) the tables.","Be careful! The floor [[is being washed]] (wash)."]},
+{t:"Rewrite the following sentences using the Passive form.",type:"lines",
+ items:[["They have repaired the roof.","The roof has been repaired|The roof has been repaired by them"],
+ ["The council will build a new library next year.","A new library will be built (by the council) next year|Next year a new library will be built (by the council)"],
+ ["Someone gave her a beautiful necklace.","She was given a beautiful necklace|A beautiful necklace was given to her|A beautiful necklace was given her"],
+ ["The teacher is checking our tests.","Our tests are being checked (by the teacher)"],
+ ["Millions of people watch the final every year.","The final is watched by millions of people every year|Every year the final is watched by millions of people"],
+ ["You can't eat this fruit.","This fruit can't be eaten|This fruit cannot be eaten"],
+ ["They didn't invite us to the wedding.","We weren't invited to the wedding|We were not invited to the wedding"]]},
+{t:"Write these sentences in another way, beginning in the way shown*.",type:"lines",
+ items:[["Nobody told Anna about the change.","wasn't told about the change","*Anna"],
+ ["They gave the winner a gold medal.","was given a gold medal","*The winner"],
+ ["People say that this restaurant is the best in town.","is said to be the best in town","*This restaurant"],
+ ["Someone is following us.","are being followed (by someone)","*We"],
+ ["They have shown the guests their rooms.","have been shown their rooms","*The guests"]]},
+{t:"Rewrite these questions in the Passive form.",type:"lines",
+ items:[["Who painted this picture?","Who was this picture painted by|By whom was this picture painted"],
+ ["Do they sell stamps in this shop?","Are stamps sold in this shop"],
+ ["Has anyone cleaned the kitchen?","Has the kitchen been cleaned (by anyone)"],
+ ["When will they announce the results?","When will the results be announced"],
+ ["Did somebody invite you to the party?","Were you invited to the party"]]},
+{t:"Rewrite each sentence so that it contains a form of HAVE SOMETHING DONE.",type:"lines",
+ items:[["A mechanic is repairing our car this morning.","We are having our car repaired this morning|This morning we are having our car repaired"],
+ ["An electrician installed new lights in my kitchen last week.","I had new lights installed in my kitchen last week|Last week I had new lights installed in my kitchen"],
+ ["A technician has fixed our washing machine.","We have had our washing machine fixed|We have had our washing machine repaired"],
+ ["The optician will test Sam's eyes tomorrow.","Sam will have his eyes tested tomorrow|Sam is going to have his eyes tested tomorrow|Sam will have his eyes checked tomorrow"]]},
+{t:"Choose the correct answer: a, b or c.",type:"mc",
+ items:[["The Mona Lisa ______ by millions of people every year.",["sees","is seen","is seeing"],1],
+ ["My bike ______ yesterday, so I came by bus.",["stole","was stolen","was stealing"],1],
+ ["Don't go in! The road ______ at the moment.",["is building","is being built","is built"],1],
+ ["I ______ my hair cut every six weeks.",["make","do","have"],2],
+ ["Smoking ______ in this room.",["isn't allowed","doesn't allow","isn't allowing"],0]]},
+{t:"Each sentence contains ONE mistake. Find it and rewrite the sentence correctly. (2 points each)",type:"lines",u:2,
+ items:[["The window was broke by the boys.","The window was broken by the boys"],
+ ["This song was written from Paul McCartney.","This song was written by Paul McCartney"],
+ ["My car is being repair at the moment.","My car is being repaired at the moment"],
+ ["The results will been announced tomorrow.","The results will be announced tomorrow"],
+ ["I'm having my house paint next week.","I'm having my house painted next week"]]},
+{t:"Rewrite the following sentences using the Active form.",type:"lines",
+ items:[["This cake was made by my mother.", "My mother made this cake|My mum made this cake|My mom made this cake"],
+ ["The match has been cancelled by the referee.", "The referee has cancelled the match"],
+ ["Our house is being painted by two workers.", "Two workers are painting our house"],
+ ["The new law will be announced by the Prime Minister tomorrow.", "The Prime Minister will announce the new law tomorrow|Tomorrow the Prime Minister will announce the new law"],
+ ["The tourists were shown the way by a policeman.", "A policeman showed the tourists the way|A policeman showed the way to the tourists"],
+ ["The children must be taken to school by their parents.", "Their parents must take the children to school"],
+ ["Millions of euros have been spent on the new stadium by the city council.", "The city council has spent millions of euros on the new stadium"]]},
+{t:"Complete the text with the correct form (passive or active) of the verbs in brackets.",type:"text",
+ text:"The Eiffel Tower ^1[[was built]] (build) for the 1889 World's Fair in Paris. At first, it ^2[[was called]] (call) \"useless and monstrous\" by a group of famous artists. Now, however, it ^3[[is loved]] (love) by everybody and it ^4[[is visited]] (visit) by millions of people every year. The tower ^5[[is repainted]] (repaint) regularly to protect it from rust, and it ^6[[can be seen]] (can/see) from many parts of the city. Millions of souvenirs ^7[[have been sold]] (sell) here, and next week our class ^8[[will be taken]] (take) to the top by our teacher!"},
+{t:"TRANSLATION: (2 points each)",type:"lines",u:2,
+ items:[["Dove sono stati fatti questi vestiti?","Where were these clothes made"],
+ ["Ho fatto riparare (REPAIR) il mio computer la settimana scorsa.","I had my computer repaired last week|Last week I had my computer repaired"],
+ ["Questa lettera è stata scritta da mia nonna cinquant'anni fa.","This letter was written by my grandmother fifty years ago|This letter was written by my grandmother 50 years ago|Fifty years ago this letter was written by my grandmother"],
+ ["Il nuovo museo verrà aperto lunedì prossimo.","The new museum will be opened next Monday|The new museum is going to be opened next Monday|The new museum will be opened on Monday"]]},
+{t:"TRANSLATION 2: passive and HAVE SOMETHING DONE (2 points each)",type:"lines",u:2,
+ items:[["Il ponte è stato distrutto da un'inondazione due anni fa.", "The bridge was destroyed by a flood two years ago|Two years ago the bridge was destroyed by a flood"],
+ ["Mi è stato detto di aspettare fuori.", "I was told to wait outside"],
+ ["A Marco è stato offerto un lavoro a Londra.", "Marco was offered a job in London|A job in London was offered to Marco"],
+ ["L'anno scorso ci siamo fatti ristrutturare (HAVE) la cucina da una ditta di Milano.", "Last year we had our kitchen renovated by a company from Milan|We had our kitchen renovated by a company from Milan last year|Last year we had our kitchen refurbished by a company from Milan|We had our kitchen refurbished by a company from Milan last year"],
+ ["Lei odia essere trattata come una bambina.", "She hates being treated like a child|She hates being treated as a child"],
+ ["Si dice che quella casa sia stata costruita nel Seicento.", "That house is said to have been built in the seventeenth century|That house is said to have been built in the 17th century|That house is said to have been built in the 1600s|It is said that that house was built in the seventeenth century|It is said that that house was built in the 17th century"],
+ ["Il mio telefono è stato rubato mentre aspettavo l'autobus.", "My phone was stolen while I was waiting for the bus|My phone was stolen while I was waiting for a bus"],
+ ["La cena era già stata preparata quando siamo arrivati.", "The dinner had already been prepared when we arrived|Dinner had already been prepared when we arrived|When we arrived the dinner had already been prepared|When we arrived dinner had already been prepared"],
+ ["Quanti anni fa ti sei fatto fare (HAVE) quel tatuaggio?", "How long ago did you have that tattoo done|How many years ago did you have that tattoo done|How long ago did you have your tattoo done"],
+ ["Le foto non possono essere scattate dentro il museo.", "Photos can't be taken inside the museum|Photos can't be taken in the museum|Photographs can't be taken inside the museum|Pictures can't be taken inside the museum"]]}
+];
+
+function norm(s){
+  s=String(s).toLowerCase().replace(/[‘’´`]/g,"'");
+  s=s.replace(/can't/g,"cannot").replace(/can not/g,"cannot").replace(/won't/g,"will not")
+     .replace(/n't/g," not").replace(/'re/g," are").replace(/'m/g," am").replace(/'ve/g," have").replace(/'ll/g," will")
+     .replace(/canceled/g,"cancelled");
+  s=s.replace(/[.,!?;:"“”()*]/g," ").replace(/\s+/g," ").trim();
+  return s;
+}
+function expand(a){
+  var m=a.match(/\(([^)]*)\)/);
+  if(!m) return [a];
+  var w=a.replace(m[0],""), wo=a.replace(m[0],m[1]);
+  return expand(w).concat(expand(wo));
+}
+function accepted(list){var out=[];list.forEach(function(a){expand(a).forEach(function(x){out.push(norm(x));});});return out;}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e;}
+
+var units=[]; // global
+var root=document.getElementById("root");
+
+EX.forEach(function(ex,ei){
+  ex.units=[]; var u=ex.u||1;
+  var card=el("section","ex");
+  var h=el("h2"); h.appendChild(el("span","",(ei+1)+". "+ex.t));
+  var total=0;
+  card.appendChild(h);
+  if(ex.box) card.appendChild(el("div","box",ex.box));
+  var body=el("div");card.appendChild(body);
+
+  function mkUnit(kind,wrap,getVal,lock,answers,display,pts,ref){
+    var fb=el("span","fb");wrap.appendChild(fb);
+    var un={kind:kind,wrap:wrap,fb:fb,done:false,ok:false,pts:pts,reset:null};
+    un.check=function(){
+      if(un.done)return;
+      var v=getVal(); var ok;
+      if(kind==="mc") ok=(v===answers); else ok=accepted(answers).indexOf(norm(v))>=0;
+      un.done=true;un.ok=ok;lock(true);
+      wrap.classList.add(ok?"ok":"ko");
+      fb.className="fb "+(ok?"ok":"ko");
+      fb.textContent=(ok?"✓ Correct! ":"✗ Soluzione: ")+display;
+      if(ok&&0)fb.textContent="";
+    };
+    un.clear=function(){un.done=false;un.ok=false;wrap.classList.remove("ok","ko");fb.textContent="";fb.className="fb";ref.clear();lock(false);};
+    ex.units.push(un);units.push(un);total+=pts;
+    return un;
+  }
+  function dispOf(list){return list.slice(0,2).join("  /  ");}
+
+  if(ex.type==="cloze"){
+    ex.items.forEach(function(s,k){
+      var wrap=el("div","it");
+      wrap.appendChild(el("span","num",ex.lab?String.fromCharCode(97+k)+".":(k+1)));
+      var re=/\[\[(.+?)\]\]/g,last=0,m;
+      while((m=re.exec(s))){
+        wrap.appendChild(document.createTextNode(s.slice(last,m.index)));
+        var ans=m[1].split("|");
+        var inp=el("input");inp.type="text";inp.autocomplete="off";inp.autocapitalize="off";inp.spellcheck=false;
+        inp.style.width=Math.max(8,ans[0].length*0.7+3)+"em";
+        wrap.appendChild(inp);
+        last=re.lastIndex;
+        (function(inp,ans){
+          var own=wrap; 
+          mkUnit("txt",own,function(){return inp.value},function(l){inp.disabled=l},ans,dispOf(ans),u,{clear:function(){inp.value=""}});
+        })(inp,ans);
+      }
+      wrap.appendChild(document.createTextNode(s.slice(last)));
+      var fbs=wrap.querySelectorAll(".fb");for(var q=0;q<fbs.length;q++)wrap.appendChild(fbs[q]);
+      body.appendChild(wrap);
+    });
+  } else if(ex.type==="text"){
+    var p=el("div","it text");
+    var parts=ex.text.split(/\^(\d)/);
+    parts.forEach(function(pt,i){
+      if(i%2===1){p.appendChild(el("span","sup",pt));return;}
+      var re=/\[\[(.+?)\]\]/g,last=0,m;
+      while((m=re.exec(pt))){
+        p.appendChild(document.createTextNode(pt.slice(last,m.index)));
+        var ans=m[1].split("|");
+        var inp=el("input");inp.type="text";inp.autocomplete="off";inp.spellcheck=false;inp.style.width="9em";
+        p.appendChild(inp);
+        var holder=el("span","fb");p.appendChild(holder); // placeholder per soluzione inline
+        (function(inp,ans,holder){
+          var fake=el("span");
+          var un={kind:"txt",wrap:fake,fb:holder,done:false,ok:false,pts:u};
+          un.check=function(){
+            if(un.done)return;
+            var ok=accepted(ans).indexOf(norm(inp.value))>=0;
+            un.done=true;un.ok=ok;inp.disabled=true;
+            inp.style.background=ok?"#c8e6c9":"#ffcdd2";
+            holder.className="fb "+(ok?"ok":"ko");
+            holder.style.display="inline";holder.style.marginLeft="4px";
+            holder.textContent=ok?"✓":"✗ "+ans[0];
+          };
+          un.clear=function(){un.done=false;un.ok=false;inp.value="";inp.disabled=false;inp.style.background="";holder.textContent="";holder.className="fb";};
+          ex.units.push(un);units.push(un);total+=u;
+        })(inp,ans,holder);
+        last=re.lastIndex;
+      }
+      p.appendChild(document.createTextNode(pt.slice(last)));
+    });
+    body.appendChild(p);
+  } else if(ex.type==="mc"){
+    ex.items.forEach(function(it,k){
+      var wrap=el("div","it");
+      wrap.appendChild(el("span","num",(k+1)+""));
+      wrap.appendChild(document.createTextNode(it[0]));
+      var opts=el("div","opts");opts.style.marginTop="4px";opts.style.marginLeft="1.6em";
+      var radios=[];
+      it[1].forEach(function(o,j){
+        var lb=el("label");var r=el("input");r.type="radio";r.name="mc"+ei+"_"+k;r.value=j;radios.push(r);
+        lb.appendChild(r);lb.appendChild(document.createTextNode(" "+String.fromCharCode(97+j)+") "+o));opts.appendChild(lb);
+      });
+      wrap.appendChild(opts);
+      body.appendChild(wrap);
+      mkUnit("mc",wrap,function(){for(var i=0;i<radios.length;i++)if(radios[i].checked)return i;return -1;},
+        function(l){radios.forEach(function(r){r.disabled=l})},it[2],String.fromCharCode(97+it[2])+") "+it[1][it[2]],u,{clear:function(){radios.forEach(function(r){r.checked=false})}});
+    });
+  } else {
+    ex.items.forEach(function(it,k){
+      var wrap=el("div","it");
+      wrap.appendChild(el("span","num",(k+1)+""));
+      wrap.appendChild(document.createTextNode(it[0]));
+      var inp=el("input","full");inp.type="text";inp.autocomplete="off";inp.autocapitalize="off";inp.spellcheck=false;
+      if(it[2]){var r=el("div");r.style.marginTop="6px";r.appendChild(el("span","pre",it[2]));inp.className="";inp.style.width="calc(100% - 9em)";inp.style.minWidth="12em";inp.style.border="1px solid #bbb";inp.style.borderBottom="2px solid #777";inp.style.padding="4px 6px";r.appendChild(inp);wrap.appendChild(r);}
+      else wrap.appendChild(inp);
+      body.appendChild(wrap);
+      var list=it[1].split("|");
+      var shown=it[2]?list.map(function(x){return it[2]+" "+x}):list;
+      mkUnit("txt",wrap,function(){return inp.value},function(l){inp.disabled=l},list,dispOf(shown),u,{clear:function(){inp.value=""}});
+    });
+  }
+
+  // tools
+  var tools=el("div","tools");
+  var b1=el("button","b1","Verifica passo passo");
+  var b2=el("button","b2","Verifica tutto l'esercizio");
+  var b3=el("button","b3","Azzera esercizio");
+  var sc=el("span","score","");
+  tools.appendChild(b1);tools.appendChild(b2);tools.appendChild(b3);tools.appendChild(sc);
+  card.appendChild(tools);
+  function upd(){
+    var n=0,done=0,pt=0;ex.units.forEach(function(x){if(x.done){done++;if(x.ok)pt+=x.pts;}});
+    sc.textContent=done?("Risposte controllate: "+done+"/"+ex.units.length+" · Punti: "+pt+"/"+total):"";
+    var all=done===ex.units.length;b1.disabled=all;b2.disabled=all;
+    updG();
+  }
+  b1.onclick=function(){for(var i=0;i<ex.units.length;i++){if(!ex.units[i].done){ex.units[i].check();var w=ex.units[i].wrap;if(w&&w.scrollIntoView&&w.getBoundingClientRect().bottom>window.innerHeight)w.scrollIntoView({block:"center",behavior:"smooth"});break;}}upd();};
+  b2.onclick=function(){ex.units.forEach(function(x){x.check()});upd();};
+  b3.onclick=function(){ex.units.forEach(function(x){x.clear()});upd();};
+  ex.upd=upd;ex.total=total;
+  var pts=el("span","pts","/"+total+" punti");h.appendChild(pts);
+  root.appendChild(card);
+});
+
+function updG(){
+  var got=0,max=0;
+  units.forEach(function(x){if(x.done){max+=x.pts;if(x.ok)got+=x.pts;}});
+  document.getElementById("gscore").textContent=got+" / "+max;
+}
+document.getElementById("gtot").textContent=units.reduce(function(a,x){return a+x.pts},0);
+document.getElementById("resetAll").onclick=function(){if(!confirm("Azzerare tutte le risposte?"))return;units.forEach(function(x){x.clear()});EX.forEach(function(e){e.upd()});window.scrollTo(0,0);};
+var topb=document.getElementById("top");
+window.addEventListener("scroll",function(){topb.style.display=window.scrollY>400?"block":"none"});
+topb.onclick=function(){window.scrollTo({top:0,behavior:"smooth"})};
+window._EX=EX;
+</script>
+</body>
+</html>
